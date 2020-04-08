@@ -237,6 +237,62 @@ namespace ConsoleApplication1
 }
 ```
 
-Използваме 2 if условия, за да проверим дали въведеното число е между 0 и 10. Забележете допълнението към if, а именно else. Идеята на else би следвало да е ясна на всеки говорещ английски език - else просто предлага алтернатива на кода, който ще се изпълни ако резултата в if условието не е изпълнен.
+Използваме 2 **if условия**, за да проверим дали въведеното число е между 0 и 10. Забележете допълнението към **if**, а именно **else**. Идеята на **else** би следвало да е ясна на всеки говорещ английски език - **else** просто предлага алтернатива на кода, който ще се изпълни ако резултата в if условието не е изпълнен.
 
 Забележете, че в този случай не използваме { и }.
+
+# Switch - условна конструкция
+
+Условието **switch** изглежда като сбор от **if** условия. **Switch** представлява списък с възможности, за всяко едно условие и допълнителен **default** случай. **default** се активира, когато нито едно от изброените условия в **switch** конструкцията не е валидно.
+
+```C#
+int number = 1;
+switch(number)
+{
+    case 0:
+    Console.WriteLine("The number is zero!");
+    break;
+    case 1:
+    Console.WriteLine("The number is one!");
+    break;
+}
+```
+
+Идентификаторът за проверка се слага след switch(condition) и след него следва списъкът с case условия. В този списък, идентификаторът се проверява срещу дадена стойност. След края на всяко условие имаме break; C# изисква да излезем от { } преди да приключи switch условието. В случай, че използвате функция за край, може вместо break да използвате return.
+
+В предния пример използваме integer за илюстрация как работи switch, но вместо int може да се използва стринг или всеки един елементарен тип.
+
+```C#
+Console.WriteLine("Do you enjoy C# ? (yes/no/maybe)");
+string input = Console.ReadLine();
+switch(input.ToLower())
+{
+    case "yes":
+    case "maybe":
+    Console.WriteLine("Great!");
+    break;
+    case "no":
+    Console.WriteLine("Too bad!");
+    break;
+}
+```
+
+Включване на default:
+
+```C#
+Console.WriteLine("Do you enjoy C# ? (yes/no/maybe)");
+string input = Console.ReadLine();
+switch(input.ToLower())
+{
+    case "yes":
+    case "maybe":
+    Console.WriteLine("Great!");
+    break;
+    case "no":
+    Console.WriteLine("Too bad!");
+    break;
+    default:
+    Console.WriteLine("I'm sorry, I don't understand that!");
+    break;
+}
+```
